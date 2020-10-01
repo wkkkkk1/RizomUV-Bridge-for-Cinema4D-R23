@@ -2,7 +2,7 @@
 
 ### Installation:
 
-Unpack plugin in Cinema4D Rxx\Plugins directory.
+Unpack plugin in your Plugins directory.
 Start Cinema4D and open Options window: Plugins > RizomUV Exporter > Options
 Specify the work path of the rizomuv.exe ( default location is: C:\Program Files\Rizom Lab\[RizomUV] )
 
