@@ -1,6 +1,6 @@
 # coding=utf-8
 # Copyright (C) 2018 Resonic.ru
-
+# R23 edition by Elisseii
 
 import os
 import re
