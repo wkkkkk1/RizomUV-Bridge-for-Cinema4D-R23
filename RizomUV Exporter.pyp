@@ -127,7 +127,7 @@ class Exporter:
         else:
             self.settings_save()
             self.demo_scripts()
-            print 'Loading Default Settings'
+            print ('Loading Default Settings')
 
     def settings_save(self):
         try:
@@ -178,7 +178,7 @@ class Exporter:
             return split_name
 
     def script_formation(self, selection, script):
-        path = self.object_path.decode().replace('\\', '/')
+        path = self.object_path.replace('\\', '/')
 
         load_string = 'ZomLoad({File={Path="' + path + '", ImportGroups=true, XYZUVW=true, UVWProps=' \
                       + str(self.ui['CHK_NEW_UV'][1]) + '}, NormalizeUVW=true})'
@@ -261,7 +261,7 @@ class Starter(Exporter):
             self.p = subprocess.Popen(param)
         except OSError:
             c4d.gui.MessageDialog('RizomUV not found! Please configure path to rizomuv.exe in Option window first!')
-            print "RizomUV not found!"
+            print ("RizomUV not found!")
             return
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -290,7 +290,7 @@ class WatchThread(Thread):
 
         while True:
 
-            print "Waiting..."
+            print ("Waiting...")
 
             # Modified begin
             if file_checker(self.swap_path, self.time):
@@ -308,12 +308,12 @@ class WatchThread(Thread):
                 if self.UI['CHK_AUTO_CLOSE'][1]:
                     self.p.kill()
 
-                print "Loading... " + self.swap_path
+                print ("Loading... ") + self.swap_path
                 break
 
             # RizomUV is closed
             if self.p.poll() is not None:
-                print "Cancel"
+                print ("Cancel")
                 break
 
             time.sleep(1)
@@ -429,7 +429,7 @@ class Options(Exporter, gui.GeDialog):
             if k in exclude_list['options']:
                 continue
 
-            if isinstance(v[1], str) or isinstance(v[1], unicode):  # TEXT
+            if isinstance(v[1], str) or isinstance(v[1], str):  # TEXT
                 if save_mode == 0:
                     self.SetString(v[0], v[1])
                 else:
@@ -984,7 +984,7 @@ def fbx_exchange(doc, objects, obj_path, ui, mode=0):
             # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
             if c4d.documents.SaveDocument(doc_temp, obj_path, c4d.SAVEDOCUMENTFLAGS_DONTADDTORECENTLIST, 1026370):
-                print "Exported to: ", obj_path
+                print ("Exported to: "), obj_path
             else:
                 gui.MessageDialog("Export failed!")
 
