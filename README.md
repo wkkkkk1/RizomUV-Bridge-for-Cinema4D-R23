@@ -1,4 +1,4 @@
-# RizomUV Bridge for Cinema4D
+# RizomUV Bridge for Cinema4D R23
 
 ### Installation:
 
